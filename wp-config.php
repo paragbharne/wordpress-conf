@@ -31,7 +31,7 @@ define('DB_USER', 'prod');
 define('DB_PASSWORD', 'password');
 
 /** MySQL hostname */
-define('DB_HOST', '139.59.12.181');
+define('DB_HOST', '159.203.174.162');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
