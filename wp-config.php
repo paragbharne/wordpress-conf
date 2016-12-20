@@ -22,10 +22,10 @@
 define('WP_ALLOW_REPAIR', true);
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'prod1');
+define('DB_NAME', 'prod');
 
 /** MySQL database username */
-define('DB_USER', 'prod1');
+define('DB_USER', 'prod');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'password');
