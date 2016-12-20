@@ -19,6 +19,11 @@ ADD apache.crt /etc/apache2/ssl/
 RUN rm -rf /var/www/html/index.html
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 RUN  git clone -b prod https://github.com/paragbharne/wordpress.git /var/www/html
+
+workdir /var/www/html/wp-content/plugins
+run find /var/www/html/wp-content/plugins/*.zip -exec unzip {} \; || pwd
+run rm -r /var/www/html/wp-content/plugins/*.zip || pwd
+
 RUN chown -R www-data:www-data /var/www/html/*
 ADD wp-config.php /var/www/html
 
