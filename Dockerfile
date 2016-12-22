@@ -10,7 +10,7 @@ RUN apt-get install -y php5-tidy php5-xmlrpc php5-xsl
 RUN apt-get install -y git openssl  && apt-get install -y supervisor
 RUN apt-get install -y mysql-client
 RUN apt-get -y install unzip nano
-RUN apt-get install openssh-server
+RUN apt-get -y install openssh-server
 RUN sudo a2enmod ssl
 
 ADD 000-default.conf /etc/apache2/sites-available
