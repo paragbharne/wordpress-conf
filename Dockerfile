@@ -19,6 +19,9 @@ ADD apache.key /etc/apache2/ssl/
 ADD apache.crt /etc/apache2/ssl/
 ADD id_rsa /root/.ssh/id_rsa
 ADD id_rsa.pub /root/.ssh/id_rsa.pub
+RUN chmod 600 /root/.ssh/id_rsa
+RUN chmod 600 /root/.ssh/id_rsa.pub
+
 
 RUN rm -rf /var/www/html/index.html
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
