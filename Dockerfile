@@ -30,7 +30,7 @@ RUN rm -rf /var/www/html/index.html
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 WORKDIR /tmp
 #RUN git clone -b master https://github.com/paragbharne/word.git
-RUN  git clone git@bitbucket.org:paragbharne/word.git 
+RUN  git clone ssh git@bitbucket.org:paragbharne/word.git 
 #RUN  git clone -b master https://paragbharne@bitbucket.org/paragbharne/word.git 
 WORKDIR /tmp/word/wp-content/plugins
 RUN find /tmp/word/wp-content/plugins/*.zip -exec unzip {} \; || pwd
