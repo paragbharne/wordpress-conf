@@ -21,7 +21,7 @@ ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 #RUN  git clone -b prod https://github.com/paragbharne/wordpress.git /var/www/html
 WORKDIR /tmp
 RUN git clone  https://github.com/paragbharne/word.git
-WORKDIR /var/www/html/wp-content/plugins
+WORKDIR /tmp/word/wp-content/plugins
 RUN find /tmp/word/wp-content/plugins/*.zip -exec unzip {} \; || pwd
 RUN rm -r /tmp/word/wp-content/plugins/*.zip || pwd
 WORKDIR /tmp/word
