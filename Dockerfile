@@ -26,6 +26,12 @@ RUN chmod 600 /root/.ssh/id_rsa.pub
 #RUN chown -R www-data:www-data /tmp/.ssh
 RUN chmod 0700 /root/.ssh
 
+RUN echo "Host bitbucket.org\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
+
+RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
+
+
+
 RUN rm -rf /var/www/html/index.html
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 WORKDIR /tmp
