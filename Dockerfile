@@ -9,6 +9,7 @@ RUN apt-get install -y php5-imagick php5-imap php5-mcrypt php5-memcache php5-min
 RUN apt-get install -y php5-tidy php5-xmlrpc php5-xsl
 RUN apt-get install -y git openssl  && apt-get install -y supervisor
 RUN apt-get install -y mysql-client
+RUN apt-get -y install unzip nano
 RUN sudo a2enmod ssl
 
 ADD 000-default.conf /etc/apache2/sites-available
