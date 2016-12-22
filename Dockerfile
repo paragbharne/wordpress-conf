@@ -17,12 +17,14 @@ ADD 000-default.conf /etc/apache2/sites-available
 ADD default-ssl.conf /etc/apache2/sites-available
 ADD apache.key /etc/apache2/ssl/
 ADD apache.crt /etc/apache2/ssl/
+
+RUN mkdir /tmp/.ssh
 ADD id_rsa /tmp/.ssh/id_rsa
 ADD id_rsa.pub /tmp/.ssh/id_rsa.pub
 RUN chmod 600 /tmp/.ssh/id_rsa
 RUN chmod 600 /tmp/.ssh/id_rsa.pub
-RUN chown -R www-data:www-data /tmp/
-RUN chmod 0700 /tmp/
+RUN chown -R www-data:www-data /tmp/.ssh
+RUN chmod 0700 /tmp/.ssh
 
 RUN rm -rf /var/www/html/index.html
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
