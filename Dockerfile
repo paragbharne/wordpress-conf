@@ -19,9 +19,9 @@ ADD apache.crt /etc/apache2/ssl/
 
 RUN rm -rf /var/www/html/index.html
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
-#RUN  git clone -b prod https://github.com/paragbharne/wordpress.git /var/www/html
 WORKDIR /tmp
-RUN git clone -b master https://github.com/paragbharne/word.git
+#RUN git clone -b master https://github.com/paragbharne/word.git
+RUN  git clone -b prod https://github.com/paragbharne/wordpress.git
 WORKDIR /tmp/word/wp-content/plugins
 RUN find /tmp/word/wp-content/plugins/*.zip -exec unzip {} \; || pwd
 RUN rm -r /tmp/word/wp-content/plugins/*.zip || pwd
