@@ -48,15 +48,8 @@ WORKDIR /tmp/word
 RUN rsync -avP /tmp/word/ /var/www/html/
 
 
-
-
-
-
-
-
 RUN rm -rf /var/www/html/index.html
 ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
-#RUN  git clone -b qa https://github.com/paragbharne/wordpress.git /var/www/html
 RUN chown -R www-data:www-data /var/www/html/*
 ADD wp-config.php /var/www/html
 
