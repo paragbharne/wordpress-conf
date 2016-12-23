@@ -36,12 +36,12 @@ WORKDIR /tmp
 #RUN git clone -b master https://github.com/paragbharne/word.git
 RUN  git clone -b master  git@bitbucket.org:paragbharne/word1.git
 #RUN  git clone -b master https://paragbharne@bitbucket.org/paragbharne/word.git
-WORKDIR /tmp/word/wp-content/plugins
-RUN find /tmp/word/wp-content/plugins/*.zip -exec unzip {} \; || pwd
-RUN rm -r /tmp/word/wp-content/plugins/*.zip || pwd
-WORKDIR /tmp/word
+WORKDIR /tmp/word1/wp-content/plugins
+RUN find /tmp/word1/wp-content/plugins/*.zip -exec unzip {} \; || pwd
+RUN rm -r /tmp/word1/wp-content/plugins/*.zip || pwd
+WORKDIR /tmp/word1
 
-RUN rsync -avP /tmp/word/ /var/www/html/
+RUN rsync -avP /tmp/word1/ /var/www/html/
 
 
 ADD 000-default.conf /etc/apache2/sites-available
