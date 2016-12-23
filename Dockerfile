@@ -18,8 +18,6 @@ ADD default-ssl.conf /etc/apache2/sites-available
 ADD apache.key /etc/apache2/ssl/
 ADD apache.crt /etc/apache2/ssl/
 
-
-
 #RUN mkdir /tmp/.ssh
 ADD id_rsa /root/.ssh/id_rsa
 ADD id_rsa.pub /root/.ssh/id_rsa.pub
@@ -48,8 +46,6 @@ WORKDIR /tmp/word
 RUN rsync -avP /tmp/word/ /var/www/html/
 
 
-RUN rm -rf /var/www/html/index.html
-ADD dir.conf  /etc/apache2/mods-enabled/dir.conf
 RUN chown -R www-data:www-data /var/www/html/*
 ADD wp-config.php /var/www/html
 
