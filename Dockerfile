@@ -38,12 +38,12 @@ WORKDIR /tmp
 #RUN git clone -b master https://github.com/paragbharne/word.git
 RUN  git clone -b master  git@bitbucket.org:paragbharne/word2.git
 #RUN  git clone -b master https://paragbharne@bitbucket.org/paragbharne/word.git
-WORKDIR /tmp/word/wp-content/plugins
-RUN find /tmp/word/wp-content/plugins/*.zip -exec unzip {} \; || pwd
-RUN rm -r /tmp/word/wp-content/plugins/*.zip || pwd
-WORKDIR /tmp/word
+WORKDIR /tmp/word2/wp-content/plugins
+RUN find /tmp/word2/wp-content/plugins/*.zip -exec unzip {} \; || pwd
+RUN rm -r /tmp/word2/wp-content/plugins/*.zip || pwd
+WORKDIR /tmp/word2
 
-RUN rsync -avP /tmp/word/ /var/www/html/
+RUN rsync -avP /tmp/word2/ /var/www/html/
 
 
 RUN chown -R www-data:www-data /var/www/html/*
